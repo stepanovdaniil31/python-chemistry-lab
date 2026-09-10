@@ -3,8 +3,12 @@ from html.parser import HTMLParser
 import json
 
 root = Path('dist')
-notebook = root / 'files' / '01_python_syntax.ipynb'
+notebook = root / 'files' / '00_python_syntax.ipynb'
 assert notebook.is_file(), 'The published notebook is missing'
+for source in Path('content').glob('*.ipynb'):
+    published = root / 'files' / source.name
+    assert published.is_file(), f'The published notebook is missing: {source.name}'
+    assert json.loads(published.read_text(encoding='utf-8')) == json.loads(source.read_text(encoding='utf-8')), f'Published notebook differs from source: {source.name}'
 assert (root / 'lab' / 'index.html').is_file(), 'JupyterLab was not built'
 assert (root / 'api' / 'contents' / 'all.json').is_file(), 'Notebook index is missing'
 
@@ -16,10 +20,10 @@ assert (root / 'api' / 'contents' / 'all.json').is_file(), 'Notebook index is mi
   <title>Python для химиков</title>
   <meta name="description" content="Учебные блокноты Python. Запуск в браузере без регистрации.">
   <script id="jupyter-config-data" type="application/json" data-jupyter-lite-root=".">{}</script>
-  <meta http-equiv="refresh" content="0;url=lab/index.html?path=01_python_syntax.ipynb">
-  <script>location.replace("lab/index.html?path=01_python_syntax.ipynb");</script>
+  <meta http-equiv="refresh" content="0;url=lab/index.html?path=00_python_syntax.ipynb">
+  <script>location.replace("lab/index.html?path=00_python_syntax.ipynb");</script>
 </head>
-<body><main><h1>Python для химиков</h1><p><a href="lab/index.html?path=01_python_syntax.ipynb">Открыть блокноты</a></p></main></body>
+<body><main><h1>Python для химиков</h1><p><a href="lab/index.html?path=00_python_syntax.ipynb">Открыть блокноты</a></p></main></body>
 </html>
 ''', encoding='utf-8')
 (root / '.nojekyll').touch()

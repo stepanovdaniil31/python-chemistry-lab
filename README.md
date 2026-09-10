@@ -6,7 +6,24 @@ JupyterLite с учебными блокнотами. Python работает в
 
 ## Материалы
 
-- `content/01_python_syntax.ipynb` — основной синтаксис Python: переменные, типы, ветвления, коллекции, циклы и функции.
+- `content/00_python_syntax.ipynb` — основной синтаксис Python: переменные, типы, ветвления, коллекции, циклы и функции.
+- `content/01_kalkulyator.ipynb` — вычисления и переменные.
+- `content/02_stroki_vyvod.ipynb` — строки, ввод и вывод.
+- `content/03_usloviya.ipynb` — условия.
+- `content/04_cikly.ipynb` — циклы.
+- `content/05_spiski.ipynb` — списки.
+- `content/06_slovari.ipynb` — словари.
+- `content/07_funkcii.ipynb` — функции.
+- `content/08_faily.ipynb` — файлы.
+- `content/09_oshibki_parser.ipynb` — ошибки и разбор формул.
+- `content/10_numpy.ipynb` — NumPy.
+- `content/11_matplotlib.ipynb` — Matplotlib.
+- `content/12_pandas.ipynb` — pandas.
+- `content/13_statistika.ipynb` — статистика.
+- `content/14_chislennye_metody.ipynb` — численные методы.
+- `content/15_miniproekt_kinetika.ipynb` — мини-проект по кинетике.
+
+При сборке проверяется формат всех блокнотов. Демонстрационный блокнот `00` дополнительно выполняется целиком; практические задания `01`–`15` содержат заготовки решений и намеренные ошибки, поэтому автоматически не выполняются.
 
 ## Обновление материалов
 
